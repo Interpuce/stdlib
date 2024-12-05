@@ -1,9 +1,9 @@
-# All object files
+# All object files and output files
 *.o
 *.so
 *.aef
 
-# Configuration
+# Editor configuration
 .vscode
 
 # User place to make apps
