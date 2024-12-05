@@ -1,2 +1,16 @@
+# All object files
 *.o
-userplace/
+*.so
+*.aef
+
+# Configuration
+.vscode
+
+# User place to make apps
+userplace
+src
+include/proj-*.h
+lib
+
+# Templates and test files
+basics.c 
