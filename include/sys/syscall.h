@@ -94,3 +94,31 @@ static inline void _reboot() {
         : "%eax"
     );
 }
+
+/*
+ * Internal function! Use `clear_screen` from `<sys/display.h>` instead.
+ */
+static inline void _clear_screen() {
+    asm volatile (
+        "movl $9, %%eax"
+        "int $0x80"
+        :
+        :
+        : "%eax"
+    );
+}
+
+/*
+ * Internal function! Use `read` from `<stdio.h>` instead.
+ */
+static inline void _read_str(char* buffer, uint32_t length) {
+    asm volatile (
+        "movl $10, %%eax"
+        "movl %0, %%ebx"
+        "movl %1, %%ecx"
+        "int $0x80"
+        :
+        : "r"(buffer), "r"(length)
+        : "%eax", "%ebx", "%ecx"
+    );
+}

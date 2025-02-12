@@ -40,3 +40,45 @@ void set_color(uint8_t color) {
 void beep(uint32_t frequency, uint32_t duration) {
     return _beep(frequency, duration);
 }
+
+void print_error(const string str) {
+    cprint(" [ ", 0x07);
+    cprint("ERROR", 0x04);
+    cprint(" ] ", 0x07);
+    cprint(str, 0x07);
+    cprint("\n", 0x07);
+}
+
+void print_info(const string str) {
+    cprint(" [ ", 0x07);
+    cprint("INFO", 0x01);
+    cprint(" ] ", 0x07);
+    cprint(str, 0x07);
+    cprint("\n", 0x07);
+}
+
+void print_warn(const string str) {
+    cprint(" [ ", 0x07);
+    cprint("WARNING", 0x0E);
+    cprint(" ] ", 0x07);
+    cprint(str, 0x07);
+    cprint("\n", 0x07);
+}
+
+void print_ok(const string str) {
+    cprint(" [ ", 0x07);
+    cprint("OK", 0x0B);
+    cprint(" ] ", 0x07);
+    cprint(str, 0x07);
+    cprint("\n", 0x07);
+}
+
+void print_custom(const string str, uint8_t color, uint8_t scolor) {
+    cprint(" [ ", scolor);
+    cprint(str, color);
+    cprint(" ] ", scolor);
+}
+
+void read(char* buffer, uint32_t max_lenght) {
+    _read_str(buffer, max_lenght);
+}
