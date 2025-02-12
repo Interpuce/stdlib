@@ -23,6 +23,15 @@ void println(const char *str) {
     print("\n");
 }
 
+void cprint(const char *str, uint8_t color) {
+    _print(str, color);
+}
+
+void cprintln(const char *str, uint8_t color) {
+    _print(str, color);
+    _print("\n", color);
+}
+
 void set_color(uint8_t color) {
     _print("", color);
     current_color = color;
