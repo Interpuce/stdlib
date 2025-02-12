@@ -82,3 +82,7 @@ void print_custom(const string str, uint8_t color, uint8_t scolor) {
 void read(char* buffer, uint32_t max_lenght) {
     _read_str(buffer, max_lenght);
 }
+
+void printct(const char *str, uint8_t color) {
+    _printct(str, color);
+}
