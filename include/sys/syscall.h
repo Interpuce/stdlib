@@ -126,7 +126,7 @@ static inline void _read_str(char* buffer, uint32_t length) {
 /*
  * Internal function! Use `printct` from `<stdio.h>` instead.
  */
-static inline void _printct(const char* str, uint8_t color) {
+static inline void _printct(const char* str, uint32_t color) {
     asm volatile (
         "movl $11, %%eax\n"
         "movl %0, %%ebx\n"
