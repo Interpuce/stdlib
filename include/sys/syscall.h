@@ -39,7 +39,6 @@ static inline void _beep(uint32_t frequency, uint32_t duration) {
 static inline void _report_os_crash() {
     asm volatile (
         "movl $6, %%eax\n"
-        "movl %0, %%ebx\n"
         "int $0x80\n"
         :
         :
