@@ -8,11 +8,11 @@
  */
 static inline void _print(const char* str, uint32_t color) {
     asm volatile (
-        "movl $4, %%eax"
-        "movl %0, %%ebx"
-        "movl %1, %%ecx"
-        "movl %2, %%edx"
-        "int $0x80"
+        "movl $4, %%eax\n"
+        "movl %0, %%ebx\n"
+        "movl %1, %%ecx\n"
+        "movl %2, %%edx\n"
+        "int $0x80\n"
         :
         : "r"(1), "r"(str), "r"(color)
         : "%eax", "%ebx", "%ecx", "%edx"
@@ -24,10 +24,10 @@ static inline void _print(const char* str, uint32_t color) {
  */
 static inline void _beep(uint32_t frequency, uint32_t duration) {
     asm volatile (
-        "movl $5, %%eax"
-        "movl %0, %%ebx"
-        "movl %1, %%ecx"
-        "int $0x80"
+        "movl $5, %%eax\n"
+        "movl %0, %%ebx\n"
+        "movl %1, %%ecx\n"
+        "int $0x80\n"
         :
         : "r"(frequency), "r"(duration)
         : "%eax", "%ebx", "%ecx"
@@ -39,9 +39,9 @@ static inline void _beep(uint32_t frequency, uint32_t duration) {
  */
 static inline void _report_os_crash() {
     asm volatile (
-        "movl $6, %%eax"
-        "movl %0, %%ebx"
-        "int $0x80"
+        "movl $6, %%eax\n"
+        "movl %0, %%ebx\n"
+        "int $0x80\n"
         :
         :
         : "%eax", "%ebx"
@@ -74,8 +74,8 @@ string _auror_ver_get() {
  */
 static inline void _shutdown() {
     asm volatile (
-        "movl $7, %%eax"
-        "int $0x80"
+        "movl $7, %%eax\n"
+        "int $0x80\n"
         :
         :
         : "%eax"
@@ -87,8 +87,8 @@ static inline void _shutdown() {
  */
 static inline void _reboot() {
     asm volatile (
-        "movl $8, %%eax"
-        "int $0x80"
+        "movl $8, %%eax\n"
+        "int $0x80\n"
         :
         :
         : "%eax"
@@ -100,8 +100,8 @@ static inline void _reboot() {
  */
 static inline void _clear_screen() {
     asm volatile (
-        "movl $9, %%eax"
-        "int $0x80"
+        "movl $9, %%eax\n"
+        "int $0x80\n"
         :
         :
         : "%eax"
@@ -113,10 +113,10 @@ static inline void _clear_screen() {
  */
 static inline void _read_str(char* buffer, uint32_t length) {
     asm volatile (
-        "movl $10, %%eax"
-        "movl %0, %%ebx"
-        "movl %1, %%ecx"
-        "int $0x80"
+        "movl $10, %%eax\n"
+        "movl %0, %%ebx\n"
+        "movl %1, %%ecx\n"
+        "int $0x80\n"
         :
         : "r"(buffer), "r"(length)
         : "%eax", "%ebx", "%ecx"
@@ -128,10 +128,10 @@ static inline void _read_str(char* buffer, uint32_t length) {
  */
 static inline void _printct(const char* str, uint8_t color) {
     asm volatile (
-        "movl $11, %%eax"
-        "movl %0, %%ebx"
-        "movl %1, %%ecx"
-        "int $0x80"
+        "movl $11, %%eax\n"
+        "movl %0, %%ebx\n"
+        "movl %1, %%ecx\n"
+        "int $0x80\n"
         :
         : "r"(str), "r"(color)
         : "%eax", "%ebx", "%ecx"
