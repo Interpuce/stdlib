@@ -6,7 +6,7 @@
 /*
  * Internal function! Use `print` from `<stdio.h>` instead.
  */
-static inline void _print(const char* str, uint8_t color) {
+static inline void _print(const char* str, uint32_t color) {
     asm volatile (
         "movl $4, %%eax"
         "movl %0, %%ebx"
