@@ -9,8 +9,8 @@
 static inline void _print(const char* str, uint32_t color) {
     asm volatile (
         "movl $4, %%eax\n"
-        "movl %1, %%ecx\n"
-        "movl %2, %%edx\n"
+        "movl %0, %%ecx\n"
+        "movl %1, %%edx\n"
         "int $0x80\n"
         :
         : "r"(str), "r"(color)
