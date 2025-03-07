@@ -7,10 +7,10 @@
  * If you are looking for syscalls implementation, please see the another file.
  */
 
-void reboot() {
-    _reboot();
-}
+void reboot();
 
-void shutdown() {
-    _shutdown();
-}
+void shutdown();
+
+void clearscreen();
+
+void crash_os();
