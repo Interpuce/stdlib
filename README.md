@@ -2,6 +2,9 @@
 
 A rewrite of standard C libary (stdlib) for AurorOS purposes.
 
+> [!WARNING]
+> **Deprecated** since 01.05.2025.
+
 > [!IMPORTANT]
 > This is not source code of AurorOS, which can be found at [official repo](https://github.com/Interpuce/AurorOS) after first public release.
 
